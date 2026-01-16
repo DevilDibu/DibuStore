@@ -1,0 +1,268 @@
+/* Configuración General estilo DibuStore (Negro y Rojo) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #050505; /* Negro profundo */
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor Grid Responsivo */
+.container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 200px 1fr 200px; 
+    grid-template-areas: 
+        "header header header"
+        "sidebar main news"
+        "promo promo promo"
+        "footer footer footer";
+}
+
+/* --- CABECERA --- */
+.header { 
+    grid-area: header; 
+    background: #111111; 
+    padding: 20px 30px; 
+    border-radius: 8px; 
+    border-bottom: 3px solid #ff0000; 
+    display: flex;             
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo-container {
+    display: flex;             
+    align-items: center;
+    gap: 20px; 
+}
+
+.main-logo {
+    height: 160px; 
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #ff0000; 
+    text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+}
+
+.header input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #ff0000;
+    background: #1a1a1a;
+    color: white;
+    width: 300px;
+    outline: none;
+}
+
+/* --- SECCIÓN PRINCIPAL --- */
+.main-content { 
+    grid-area: main; 
+    background: #0f0f0f; 
+    padding: 20px; 
+    border-radius: 8px; 
+    min-height: 300px; 
+    border: 1px solid #222;
+}
+
+/* --- BARRA LATERAL: CATEGORÍAS --- */
+.sidebar { 
+    grid-area: sidebar; 
+    background: #111111; 
+    padding: 15px; 
+    border-radius: 8px; 
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.category-item {
+    position: relative;
+    height: 85px; 
+    border-radius: 12px; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 0, 0, 0.2); 
+    transition: all 0.3s ease;
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 10%, transparent 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.category-item span {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.category-item:hover {
+    border-color: #ff0000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* --- SECCIÓN DE NOVEDADES CORREGIDA --- */
+.news { 
+    grid-area: news; 
+    background: #111111; 
+    padding: 15px; 
+    border-radius: 8px; 
+}
+
+.news-item img {
+    width: 100%;
+    max-width: 160px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ff0000;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* --- JUEGOS PRINCIPALES --- */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+}
+
+.game-card img {
+    width: 100%;
+    height: 380px;      
+    object-fit: cover;  
+    border-radius: 8px;
+    border: 2px solid #ff0000; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.game-card img:hover {
+    transform: scale(1.08); 
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6); 
+}
+
+/* --- NUEVA SECCIÓN: PROMOCIONES DETALLADAS --- */
+.promotions { 
+    grid-area: promo; 
+    display: flex; 
+    gap: 15px; 
+}
+
+.promo-box { 
+    flex: 1; 
+    background: #111111; 
+    padding: 20px; 
+    border-radius: 8px; 
+    text-align: center; 
+    border: 1px solid #ff0000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.promo-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #ff0000;
+    text-transform: uppercase;
+}
+
+/* Imagen Año Nuevo */
+.promo-image-container {
+    width: 50%;           /* Reduce el tamaño a la mitad */
+    margin: 10px auto;    /* La centra horizontalmente */
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #ff0000; /* Marco rojo igual que los juegos */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.promo-main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+}
+
+/* Efecto Hover igual al de los juegos */
+.promo-image-container:hover {
+    transform: scale(1.08); 
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6); 
+    z-index: 10;
+}
+
+/* Contador Carnaval */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-box {
+    background: #000;
+    border: 1px solid #ff0000;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 70px;
+}
+
+.time-box .number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.time-box .label {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+/* --- PIE DE PÁGINA --- */
+.footer { 
+    grid-area: footer; 
+    background: #000000; 
+    padding: 15px; 
+    text-align: center; 
+    font-size: 0.8em; 
+    border-radius: 8px; 
+    border-top: 1px solid #333;
+}
+
+/* --- DISEÑO RESPONSIVO --- */
+@media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; grid-template-areas: "header" "main" "sidebar" "news" "promo" "footer"; }
+    .header { flex-direction: column; gap: 20px; }
+    .promotions { flex-direction: column; }
+}

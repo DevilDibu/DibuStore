@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DibuStore | Juegos y Tarjetas Regalo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="img/DibuStore.png" alt="Logo DibuStore" class="main-logo">
+                <h1>DibuStore</h1>
+            </div>
+            <input type="text" placeholder="Buscar juegos, software...">
+        </header>
+
+        <nav class="sidebar">
+            <h3>Categorías</h3>
+            <div class="category-list">
+                <div class="category-item">
+                    <img src="img/steam.png" alt="Juegos de PC">
+                    <div class="category-overlay">
+                        <span>Juegos de PC</span>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="img/psn-gift-cards.png" alt="Tarjetas Regalo">
+                    <div class="category-overlay">
+                        <span>Tarjetas Regalo</span>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="img/GIFTC0108_1.png" alt="Suscripciones">
+                    <div class="category-overlay">
+                        <span>Suscripciones</span>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="img/Microsoft_Logo_512px.png" alt="Software">
+                    <div class="category-overlay">
+                        <span>Software</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="offers-section">
+                <h2>Ofertas Nuevas</h2>
+                <div class="offers-grid">
+                    <div class="game-card">
+                        <img src="img/GTAVI_ART.webp" alt="GTA VI">
+                        <p>GTA VI</p>
+                    </div>
+                    <div class="game-card">
+                        <img src="img/Resident_Evil_Requiem_ART.jpg" alt="Resident Evil Requiem">
+                        <p>Resident Evil Requiem</p>
+                    </div>
+                    <div class="game-card">
+                        <img src="img/WOLVERINE_ART.webp" alt="Wolverine">
+                        <p>Marvel's Wolverine</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="banner">¡Gran Rebaja de Temporada!</div>
+        </main>
+
+        <aside class="news">
+            <h3>Novedades</h3>
+            
+            <div class="news-item">
+                <p>Nuevo DLC de Dead by Daylight disponible.</p>
+                <img src="img/DBD_ART.jpg" alt="DLC DBD">
+            </div>
+
+            <div class="news-item">
+                <p>Nuevo DLC GTA.</p>
+                <img src="img/DLC_GTA.jpg" alt="Lanzamientos">
+            </div>
+        </aside>
+
+        <section class="promotions">
+            <div class="promo-box">
+                <h3>Promociones de Año Nuevo</h3>
+                <div class="promo-image-container">
+                    <img src="img/2026.webp" alt="Año Nuevo" class="promo-main-img">
+                </div>
+            </div>
+
+            <div class="promo-box">
+                <h3>Próximamente Carnaval</h3>
+                <div class="countdown-container">
+                    <div class="time-box">
+                        <span class="number" id="months">00</span>
+                        <span class="label">MES</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="days">00</span>
+                        <span class="label">DÍAS</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="minutes">00</span>
+                        <span class="label">MIN</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="seconds">00</span>
+                        <span class="label">SEG</span>
+                    </div>
+                </div>
+                <p class="promo-subtitle">¡Prepárate para las ofertas!</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 DibuStore - Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            // Fecha objetivo: Carnaval 2026 (16 de febrero)
+            const targetDate = new Date('February 16, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const duration = targetDate - now;
+
+            if (duration > 0) {
+                // Cálculo de meses (aprox), días, minutos y segundos
+                const m = Math.floor(duration / (1000 * 60 * 60 * 24 * 30.44));
+                const d = Math.floor((duration % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+                const mins = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((duration % (1000 * 60)) / 1000);
+
+                // Actualizar los elementos en el HTML
+                document.getElementById('months').innerText = m.toString().padStart(2, '0');
+                document.getElementById('days').innerText = d.toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = mins.toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = secs.toString().padStart(2, '0');
+            } else {
+                // Si la fecha ya pasó
+                document.getElementById('months').innerText = "00";
+                document.getElementById('days').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+            }
+        }
+
+        // Ejecutar cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html> 
