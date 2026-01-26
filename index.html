@@ -14,7 +14,10 @@
                 <img src="img/DibuStore.png" alt="Logo DibuStore" class="main-logo">
                 <h1>DibuStore</h1>
             </div>
-            <input type="text" placeholder="Buscar juegos, software...">
+            <div class="header-right">
+                <input type="text" placeholder="Buscar juegos, software...">
+                <a href="registro.html" class="nav-btn">Registrarse</a>
+            </div>
         </header>
 
         <nav class="sidebar">
@@ -122,25 +125,21 @@
 
     <script>
         function updateCountdown() {
-            // Fecha objetivo: Carnaval 2026 (16 de febrero)
             const targetDate = new Date('February 16, 2026 00:00:00').getTime();
             const now = new Date().getTime();
             const duration = targetDate - now;
 
             if (duration > 0) {
-                // Cálculo de meses (aprox), días, minutos y segundos
                 const m = Math.floor(duration / (1000 * 60 * 60 * 24 * 30.44));
                 const d = Math.floor((duration % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
                 const mins = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
                 const secs = Math.floor((duration % (1000 * 60)) / 1000);
 
-                // Actualizar los elementos en el HTML
                 document.getElementById('months').innerText = m.toString().padStart(2, '0');
                 document.getElementById('days').innerText = d.toString().padStart(2, '0');
                 document.getElementById('minutes').innerText = mins.toString().padStart(2, '0');
                 document.getElementById('seconds').innerText = secs.toString().padStart(2, '0');
             } else {
-                // Si la fecha ya pasó
                 document.getElementById('months').innerText = "00";
                 document.getElementById('days').innerText = "00";
                 document.getElementById('minutes').innerText = "00";
@@ -148,10 +147,9 @@
             }
         }
 
-        // Ejecutar cada segundo
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
 
 </body>
-</html> 
+</html>
