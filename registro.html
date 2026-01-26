@@ -4,38 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro | DibuStore</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="form-container">
         <h2>Registro</h2>
-        <form>
+        <form action="index.html">
             <div class="form-group">
                 <label>Nombres</label>
-                <input type="text" placeholder="Your name..">
+                <input type="text" placeholder="Tu nombre..">
             </div>
             <div class="form-group">
                 <label>Apellidos</label>
-                <input type="text" placeholder="Your last name..">
+                <input type="text" placeholder="Tu apellido..">
             </div>
             <div class="form-group">
-                <label>Fecha nacimiento</label>
+                <label>Fecha de nacimiento</label>
                 <input type="date">
             </div>
             <div class="form-group">
-                <label>Country</label>
+                <label>País</label>
                 <select>
-                    <option>Seleccione el país...</option>
-                    <option>Ecuador</option>
+                    <option value="">Seleccione el país...</option>
+                    <option value="AR">Argentina</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="BR">Brasil</option>
+                    <option value="CL">Chile</option>
+                    <option value="CO">Colombia</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="CU">Cuba</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="ES">España</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="HN">Honduras</option>
+                    <option value="MX">México</option>
+                    <option value="NI">Nicaragua</option>
+                    <option value="PA">Panamá</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Perú</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="DO">República Dominicana</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="VE">Venezuela</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Email</label>
-                <input type="email">
+                <label>Correo electrónico</label>
+                <input type="email" placeholder="ejemplo@correo.com">
             </div>
             <div class="form-group">
                 <label>Contraseña</label>
-                <input type="password">
+                <input type="password" placeholder="Mínimo 8 caracteres">
             </div>
             <button type="submit" class="submit-btn">Registrar</button>
         </form>
