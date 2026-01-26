@@ -192,6 +192,17 @@ body {
     box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6); 
 }
 
+/* AQUÍ ESTÁ LA CORRECCIÓN PARA EL LINK: */
+.game-card a {
+    text-decoration: none;  /* Quita el subrayado */
+    color: white;           /* Quita el color azul y pone blanco */
+    display: block;         /* Hace que el enlace ocupe el bloque */
+}
+
+.game-card a:hover {
+    color: #ff0000;         /* Opcional: cambia a rojo al pasar el mouse */
+}
+
 /* --- PROMOCIONES --- */
 .promotions { 
     grid-area: promo; 
@@ -270,11 +281,11 @@ body {
 
 /* --- ESTILOS DE PRODUCTO (RESIDENT EVIL) --- */
 .product-detail-container {
-    grid-area: main; /* Ocupa el área principal */
+    grid-area: main;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
-    background: #dcdcdc; /* Gris claro de la interfaz */
+    background: #dcdcdc; 
     padding: 30px;
     border-radius: 10px;
     color: #333;
@@ -283,11 +294,12 @@ body {
 }
 
 .platform-logo {
-    height: 50px;       /* CAMBIA ESTO: Altura del logo (hazlo más grande o chico) */
-    width: auto;        /* Mantiene la proporción para que no se estire */
-    border-radius: 8px; /* CAMBIA ESTO: Qué tan redondas quieres las esquinas (más número = más redondo) */
-    margin-bottom: 15px; /* Espacio debajo del logo */
+    height: 50px;       
+    width: auto;        
+    border-radius: 8px; 
+    margin-bottom: 15px; 
 }
+
 .product-header-flex {
     display: flex;
     gap: 25px;
@@ -336,7 +348,7 @@ body {
 
 .pay-icon-main {
     height: 40px;
-    background: #f8d117; /* Amarillo Pichincha */
+    background: #f8d117; 
     padding: 5px 15px;
     border-radius: 4px;
     margin-bottom: 15px;
@@ -469,7 +481,7 @@ body {
 
 .form-group {
     display: flex;
-    flex-direction: column; /* Columna para alinear inputs */
+    flex-direction: column; 
     background: #ccc; 
     margin-bottom: 12px;
     padding: 10px;
